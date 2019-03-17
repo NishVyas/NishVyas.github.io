@@ -4,10 +4,84 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- The below is an import from awesomefont.com for the social media icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
     <!-- Below, we link the ALREADY COMPILED stylesheet and not the main.scss since thats the file that compiles the css for us -->
     <link rel="stylesheet" href="css/main.css" />
     <title>Welcome to my Portfolio</title>
   </head>
-  <body></body>
-  <h1>Hello!</h1>
+  <body id="bg-img">
+    <header>
+      <!-- The below div is for the hamburger menu -->
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+      <!-- The nav class below will have our portrait and links -->
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait"></div>
+        </div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="/" class="nav-link">
+              Home
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/about.html" class="nav-link">
+              About Me
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/work.html" class="nav-link">
+              My Work
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="/contact.html" class="nav-link">
+              How To Reach Me
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Below, we have the headings when we first load the page -->
+    <main id="home">
+      <h1 class="lg-heading">
+        Nishant <span class="text-secondary">Vyas</span>
+      </h1>
+      <h2 class="sm-heading">
+        Full-Stack Developer, Software Developer, & Data Science
+      </h2>
+      <div class="icons">
+        <a href="https://twitter.com/LakerNishant">
+          <i class="fab fa-twitter fa-2x"></i>
+        </a>
+      </div>
+      <div class="icons">
+        <a href="https://www.facebook.com/nishant.vyas2">
+          <i class="fab fa-facebook fa-2x"></i>
+        </a>
+      </div>
+      <div class="icons">
+        <a href="https://www.linkedin.com/in/nishvyas/">
+          <i class="fab fa-linkedin fa-2x"></i>
+        </a>
+      </div>
+      <div class="icons">
+        <a href="https://github.com/NishVyas">
+          <i class="fab fa-github fa-2x"></i>
+        </a>
+      </div>
+    </main>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
