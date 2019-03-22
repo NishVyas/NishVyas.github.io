@@ -49,3 +49,133 @@
     }
   }
 }
+
+// Menu Overlay
+.menu {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  opacity: 0.9;
+  // Hides our menu items
+  visibility: hidden;
+  // After the show class is enabled, THEN we want to show the menu items
+  &.show {
+    visibility: visible;
+  }
+  // This will style the branding (picture) and the nav
+  &-branding,
+  &-nav {
+    // Display and flex-flow makes our columns
+    display: flex;
+    flex-flow: column wrap;
+    // Align-items and justify-content center it horizontally and vertically
+    align-items: center;
+    justify-content: center;
+    // Floating both columns left and giving each column 50% of the space
+    float: left;
+    width: 50%;
+    // The columns will take up the entire screen
+    height: 100vh;
+    // Overflow hidden will hide the scroll bar
+    overflow: hidden;
+  }
+  // The blow is styling for SPECIFICALLY the nav
+  &-nav {
+    margin: 0;
+    padding: 0;
+    // This will darken the entire column for the nav
+    background: darken($primary-color, 5);
+    // Gets rid of the bullet points
+    list-style: none;
+    // For the animation of the column sliding down, we will use translate3d
+    // The below makes our column start from the very top
+    transform: translate3d(0, -100%, 0);
+    // We will also include out easeOut styling
+    @include easeOut;
+    // After the show class is enabled
+    &.show {
+      // Slide in from the top
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  // This styles SPECIFICALLY the branding
+  &-branding {
+    background: $primary-color;
+    // This time, we want our column to start from the BOTTOM (hence the change from -100% to 100%)
+    transform: translate3d(0, 100%, 0);
+    @include easeOut;
+
+    // After the show class is enabled
+    &.show {
+      // Slide in from the BOTTOM
+      transform: translate3d(0, 0, 0);
+    }
+
+    // The below will handle our styling for the profile picture
+    .portrait {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      // We will add my picture to the background
+      background: url("../img/portrait.jpg");
+      // We will make the image centred to our div
+      background-position: center;
+      // There will be no repeated images to fill the div
+      background-repeat: no-repeat;
+      // Size of the image will be 100%
+      background-size: 100%;
+      // This will give pur picture a circular yellow border
+      border-radius: 50%;
+      border: solid 3px $secondary-color;
+    }
+  }
+
+  // This handles the styling for SPECIFICALLY the nav ITEMS
+  .nav-item {
+    // The items will start from the very right of the screen
+    transform: translate3d(600px, 0, 0);
+    @include easeOut;
+
+    // After the show class is enabled
+    &.show {
+      // Slide in from the RIGHT
+      transform: translate3d(0, 0, 0);
+    }
+
+    // For current class (and the link we want to color hence '> a')
+    &.current > a {
+      color: $secondary-color;
+    }
+  }
+
+  // This handles styling SPECIFICALLY for the nav links
+  // Mostly cosmetic changes, nothing too special
+  .nav-link {
+    display: inline-block;
+    position: relative;
+    font-size: 30px;
+    text-transform: uppercase;
+    padding: 1rem 0;
+    font-weight: 300;
+    color: #fff;
+    text-decoration: none;
+    @include easeOut;
+
+    // When we hover over the nav links
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+// Delay each nav item slide by 0.1 seconds
+// For items 1 through 4 (since there are 4 nav items)
+@for $x from 1 through 4 {
+  // Each nth-child in the nav-item class (since there are 4 in the HTML file)
+  .nav-item:nth-child(#{$x}) {
+    // The delay will be the nth-child times 0.1
+    // This ways, EACH NAV ITEM is delayed seperately and not all at once
+    transition-delay: $x * 0.1s;
+  }
+}
