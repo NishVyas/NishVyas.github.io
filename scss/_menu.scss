@@ -1,0 +1,51 @@
+// Menu Button styling
+.menu-btn {
+  // Position absolute will make sure it stays in that location at all times
+  position: absolute;
+  // z-index of 3 will make it be the front most (or closest) tag
+  z-index: 3;
+  // Spacing of 35 pixels from the right and top
+  right: 35px;
+  top: 35px;
+  // When we hover over the button we will have a pointer (the index finger pointing)
+  cursor: pointer;
+  // We will also include the easeOut mixin to have the same transition properties
+  @include easeOut;
+
+  // The .menu-button class doesnt have anythin inside other than 3 divs
+  // So we will add styling to the .btn-line divs INSIDE the .menu-btn div below
+  .btn-line {
+    width: 28px;
+    height: 3px;
+    // top = 0, right = 0, bottom = 5, left = 0
+    margin: 0 0 5px 0;
+    background: #fff;
+    @include easeOut;
+  }
+
+  // Rotate into X with the menu lines
+  // We want to style the menu button when its clicked so we use the ampersand
+  &.close {
+    // We rotate our 3 lines 180 degrees
+    transform: rotate(180deg);
+
+    .btn-line {
+      /* 
+          Since there is more than one .btn-line, we can
+          access each line using &:nth-child()
+          */
+      // Line 1 - Rotate it 45 degrees AND translate the line at the same time
+      &:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+      }
+      // Line 2 - Hide
+      &:nth-child(2) {
+        opacity: 0;
+      }
+      // Line 3 - Rotate 45 degrees the other way and translate
+      &:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+      }
+    }
+  }
+}

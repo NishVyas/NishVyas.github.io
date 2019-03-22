@@ -1,37 +1,6 @@
-$primary-color: #444;
-$secondary-color: #eece1a;
-$show-home-image: true;
-$home-image: url(../img/background.jpg);
-$background-opacity: 0.5;
-
-// The below is just a way of defining a function we can use for multiple tags
-// The below makes a transition phasing in with a time of 0.5 seconds
-@mixin easeOut {
-  transition: all 0.5s ease-out;
-}
-
-// The below is a function for our background image
-@mixin background {
-  @if $show-home-image {
-    &#bg-img {
-      background: $home-image;
-      background-attachment: fixed;
-      background-size: cover;
-
-      // We add an overlay to the image to handle the readability of the headings
-      &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        background: rgba($primary-color, $background-opacity);
-      }
-    }
-  }
-}
+// Below, we import the config file variables and mixins to use in our main scss file
+@import "config";
+@import "menu";
 
 // The below styles everything
 // Makes sure that if there is padding, the height and the width do not get affected
