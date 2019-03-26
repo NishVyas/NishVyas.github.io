@@ -1,7 +1,6 @@
 // Below, we import the config file variables and mixins to use in our main scss file
 @import "config";
 @import "menu";
-@import "mobile";
 
 // The below styles everything
 // Makes sure that if there is padding, the height and the width do not get affected
@@ -12,7 +11,7 @@
 body {
   @include background;
   background: $primary-color;
-  color: #fff;
+  color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -58,7 +57,10 @@ header {
 // The below is for everything inside the main tags
 main {
   padding: 4rem;
-  height: 100%;
+  // height: 100%;
+  // Our min height will be 100vh minus the footer size (60px)
+  // This makes sure our footer is tuck to the bottom
+  min-height: calc(100vh - 60px);
 
   // The icons will have a margin and display in a line
   .icons {
@@ -85,3 +87,69 @@ main {
     }
   }
 }
+
+// Styling for info
+.about-info {
+  // We will display this class as a grid
+  display: grid;
+  // Spaces out our grid
+  grid-gap: 30px;
+  // Below is our visual representation of what we want our page to look like
+  grid-template-areas:
+    "bioimage bio bio"
+    "job1 job2 job3";
+  // Below defines the sizing of our columns
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-image {
+    // Should match whatever you put in the grid-template-areas
+    grid-area: bioimage;
+    margin: auto;
+    border: $secondary-color 3px solid;
+    // Width and max height makes sure the picture covers its entire grid
+    width: 100%;
+    max-height: 100%;
+    // Position my picture to the center
+    background-position: center;
+    // There will be no repeated images to fill the div
+    background-repeat: no-repeat;
+    // Size of the image will be 100%
+    background-size: 100%;
+  }
+
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+
+  .job-1 {
+    grid-area: job1;
+  }
+
+  .job-2 {
+    grid-area: job2;
+  }
+
+  .job-3 {
+    grid-area: job3;
+  }
+
+  // General job class styling
+  .job {
+    // Lighten the background
+    background: lighten($primary-color, 5);
+    padding: 0.5rem;
+    border-bottom: $secondary-color 5px solid;
+  }
+}
+
+// Styling for the footer
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($primary-color, 10);
+  color: set-text-color($primary-color);
+  height: 60px;
+}
+
+@import "mobile";

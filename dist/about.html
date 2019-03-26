@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!-- The below is an import from awesomefont.com for the social media icons -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+    <!-- Below, we link the ALREADY COMPILED stylesheet and not the main.scss since thats the file that compiles the css for us -->
+    <link rel="stylesheet" href="css/main.css" />
+    <title>About Me</title>
+  </head>
+  <body>
+    <header>
+      <!-- The below div is for the hamburger menu -->
+      <div class="menu-btn">
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+        <div class="btn-line"></div>
+      </div>
+      <!-- The nav class below will have our portrait and links -->
+      <nav class="menu">
+        <div class="menu-branding">
+          <div class="portrait"></div>
+        </div>
+        <ul class="menu-nav">
+          <li class="nav-item">
+            <a href="/" class="nav-link">
+              Home
+            </a>
+          </li>
+          <li class="nav-item current">
+            <a href="about.html" class="nav-link">
+              About Me
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="work.html" class="nav-link">
+              My Work
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="contact.html" class="nav-link">
+              How To Reach Me
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- Below, we have the headings when we first load the page -->
+    <main id="about">
+      <h1 class="lg-heading">About <span class="text-secondary">Me</span></h1>
+      <h2 class="sm-heading">
+        Let me tell you a few things...
+      </h2>
+      <!-- Below will include our whole grid with all our bio, info, etc. -->
+      <div class="about-info">
+        <img
+          src="img/portrait-about.jpg"
+          alt="Nishant Vyas"
+          class="bio-image"
+        />
+        <!-- The below will hold my bio -->
+        <div class="bio">
+          <h3 class="text-secondary">BIO</h3>
+          <p>
+            Recently graduated computer scientist with a dynamic array of skills
+            and experiences. Seeking the position of Full Stack Developer/Data
+            Analyst to demonstrate efficiency and adaptability when working with
+            different technologies. Aiming to learn and grow while contributing
+            a creative, and problem-solving approach within the company.
+          </p>
+        </div>
+        <!-- The below will hold my Educational Background-->
+        <div class="job job-1">
+          <h3>Computer Science Degree</h3>
+          <p>
+            Started my degree in September 2013 at the University of British
+            Columbia. Graduated in June 2018. Recieved my degree for the
+            Bachelor of Science, Major in Computer Science, and a Minor in Data
+            Science.
+          </p>
+        </div>
+        <!-- The below will hold my experience -->
+        <div class="job job-2">
+          <h3>Software Developer</h3>
+          <p>
+            Worked in a group for the CEO of Tonit Media on a buy/sell portion
+            of an application for the Capstone (graduate) project. The portion
+            included creating, deleting, filtering, favoriting, and modifying
+            advertisements using XAML, Xamarin.Forms, C#, and NoSQL which also
+            helped with cross-platform programming (for iOS and Android).
+          </p>
+        </div>
+        <!-- The below will hold something i havent figured out yet. -->
+        <div class="job job-3">
+          <h3>Software Developer</h3>
+          <p>
+            Worked in a group for the CEO of Tonit Media on a buy/sell portion
+            of an application for the Capstone (graduate) project.The portion
+            included creating, deleting, filtering, favoriting, and modifying
+            advertisements using XAML, Xamarin.Forms, C#, and NoSQL which also
+            helped with cross-platform programming (for iOS and Android).
+          </p>
+        </div>
+      </div>
+    </main>
+
+    <footer id="main-footer">
+      Copyright &copy; 2019
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

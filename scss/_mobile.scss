@@ -60,6 +60,31 @@
       background-size: 100%;
     }
   }
+
+  // Styling for the about page
+  .about-info {
+    // Now we want to stack our grid items on top of wach other
+    grid-template-areas:
+      "bioimage"
+      "bio"
+      "job1"
+      "job2"
+      "job3";
+
+    // Now every column will have 1 grid item
+    grid-template-columns: 1fr;
+
+    .bio-image {
+      width: 75%;
+      max-height: 75%;
+      // Position my picture to the center
+      background-position: center;
+      // There will be no repeated images to fill the div
+      background-repeat: no-repeat;
+      // Size of the image will be 100%
+      background-size: 100%;
+    }
+  }
 }
 
 // Smartphones

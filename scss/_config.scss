@@ -33,6 +33,17 @@ $background-opacity: 0.5;
   }
 }
 
+// Set text color FUNCTION
+@function set-text-color($color) {
+  // If the lightness of our color variable is less than 40 we return black
+  @if (lightness($color) > 40) {
+    @return #000;
+    // Otherwise, we return white
+  } @else {
+    @return #fff;
+  }
+}
+
 // Media Query Mixins
 // The mixins below are for the different sizes of the devices that will access the website
 // Directly below is the mixin (method) for small screens
