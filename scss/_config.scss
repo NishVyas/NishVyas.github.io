@@ -32,3 +32,39 @@ $background-opacity: 0.5;
     }
   }
 }
+
+// Media Query Mixins
+// The mixins below are for the different sizes of the devices that will access the website
+// Directly below is the mixin (method) for small screens
+@mixin mediaSm {
+  // Any css we put below will ONLY apply to screens that are at a max width of 500 pixels
+  @media screen and (max-width: 500px) {
+    // We add @content to be able to use this mixin anywhere else in our code
+    // We will not be adding the css in this file (hence the @content to add it somewhere else)
+    @content;
+  }
+}
+
+// Medium screens
+@mixin mediaMd {
+  // Max width of 768 pixels
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+
+// Large screens
+@mixin mediaLg {
+  // Min width of 769 pixels and max width of 1170 pixels
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+
+// Extra Large screens
+@mixin mediaXl {
+  // Min width of 1171 pixels
+  @media screen and (min-width: 1171px) {
+    @content;
+  }
+}

@@ -1,6 +1,7 @@
 // Below, we import the config file variables and mixins to use in our main scss file
 @import "config";
 @import "menu";
+@import "mobile";
 
 // The below styles everything
 // Makes sure that if there is padding, the height and the width do not get affected
