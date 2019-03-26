@@ -1,9 +1,15 @@
 // Widescreens styling
 @include mediaXl {
+  .projects {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 // Desktops & Laptops
 @include mediaLg {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 // Tablets & Small Laptops
@@ -85,6 +91,10 @@
       background-size: 100%;
     }
   }
+
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 // Smartphones
@@ -92,5 +102,9 @@
   main#home h1 {
     // Makes sure that even if the screen is shorter the heading is still 10 viewport heights
     margin-top: 10vh;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
   }
 }
