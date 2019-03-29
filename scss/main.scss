@@ -62,6 +62,8 @@ main {
   // Our min height will be 100vh minus the footer size (60px)
   // This makes sure our footer is tuck to the bottom
   min-height: calc(100vh - 60px);
+  // This will center our icons as well
+  text-align: center;
 
   // The icons will have a margin and display in a line
   .icons {

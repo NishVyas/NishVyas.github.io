@@ -99,6 +99,14 @@
 
 // Smartphones
 @include mediaSm {
+  h1,
+  h2,
+  h3 {
+    &.lg-heading {
+      font-size: 4rem;
+    }
+  }
+
   main#home h1 {
     // Makes sure that even if the screen is shorter the heading is still 10 viewport heights
     margin-top: 10vh;
